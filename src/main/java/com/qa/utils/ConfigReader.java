@@ -9,7 +9,7 @@ public class ConfigReader {
 private Properties prop;
 /*
  * this method is used to load properties from config.properties file
- * return Properties
+ * return Properties prop object
  */
 	
 
