@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 	private WebDriver driver;
-	private By emailId = By.id("input-email");
+	private By emailId = By.cssSelector("#input-email");
 	private By password = By.id("input-password");
 	private By loginBtn = By.xpath("//input[@type='submit']");
 	private By forgotPassword = By.linkText("Forgotten Password");
@@ -32,6 +32,13 @@ public class LoginPage {
 
 	public void clickOnLogin() {
 		driver.findElement(loginBtn).click();
+	}
+
+	public AccountsPage doLogin(String un, String pwd) {
+		driver.findElement(emailId).sendKeys(un);
+		driver.findElement(password).sendKeys(pwd);
+		driver.findElement(loginBtn).click();
+		return new AccountsPage(driver);
 	}
 
 }
