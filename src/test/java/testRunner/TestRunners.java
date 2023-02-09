@@ -8,9 +8,9 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src\\test\\resources\\com\\Appfeatures\\AccountsPage.feature" },
 
-		glue = { "stepdefinitions", "appsHooks" }, 
-		monochrome = true, 
-		plugin = { "pretty" })
+		glue = { "stepdefinitions", "appsHooks" }, monochrome = true, plugin = { "pretty",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+				"timeline:test-output-thread/" })
 public class TestRunners {
 
 }
